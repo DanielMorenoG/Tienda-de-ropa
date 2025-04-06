@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorías de Ropa - Tienda Online</title>
+    <link rel="stylesheet" href="/css/Cate.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <div class="led-effect"></div>
+            <div class="logo-placeholder">
+                <img src="/IMG/Logo.png" alt="Logo" class="logo-image">
+            </div>
+        </div>
+        
+        <nav class="navbar">
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-list">
+                <li><a href="/html/index.html">Inicio</a></li>
+                <li><a href="./Acceserios.html">Accesorios</a></li>
+                <li><a href="/html/Categoria.html">Categoría</a></li>
+                <li><a href="/html/Material.html">Material</a></li>
+                <li><a href="/html/Epoca.html">Epoca</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<div class="container">
+    <h2>Categorías de Ropa</h2>
+    
+    <div class="category-filters">
+        <div class="filter-group">
+            <h3>Categorías</h3>
+            <div class="filter-options">
+                <label class="filter-checkbox">
+                    <input type="checkbox" name="category" value="camisetas" id="cat-camisetas"> Camisetas
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" name="category" value="pantalones" id="cat-pantalones"> Pantalones
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" name="category" value="vestidos" id="cat-vestidos"> Vestidos
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" name="category" value="zapatos" id="cat-zapatos"> Zapatos
+                </label>
+
+            </div>
+        </div>
+        
+        <div class="filter-group">
+            <h3>Género</h3>
+            <div class="filter-options">
+                <label class="filter-checkbox">
+                    <input type="checkbox" name="gender" value="hombre" id="gender-hombre"> Hombre
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" name="gender" value="mujer" id="gender-mujer"> Mujer
+                </label>
+                <label class="filter-checkbox">
+                    <input type="checkbox" name="gender" value="unisex" id="gender-unisex"> Unisex
+                </label>
+            </div>
+        </div>
+        
+        <div class="filter-group">
+            <h3>Rango de Precio</h3>
+            <div class="price-range">
+                <input type="range" id="price-slider" min="0" max="200" step="10" value="100">
+                <span id="price-value">100€</span>
+            </div>
+            <div class="price-display">
+                <span>0€</span>
+                <span>200€</span>
+            </div>
+        </div>
+        
+        <div class="filter-buttons">
+            <button class="clear" id="clear-filters">Limpiar Filtros</button>
+            <button id="apply-filters">Aplicar Filtros</button>
+        </div>
+    </div>
+    
+    <div class="product-grid" id="product-container">
+    </div>
+    
+    <div class="pagination" id="pagination">
+        <div class="page-item active">1</div>
+        <div class="page-item">2</div>
+        <div class="page-item">3</div>
+        <div class="page-item">4</div>
+        <div class="page-item">»</div>
+    </div>
+</div>
+
+
+<script>
+
+    const products = [
+        {
+            id: 1,
+            name: "Camiseta Básica",
+            category: "camisetas",
+            gender: "unisex",
+            price: 19.99,
+            originalPrice: 29.99,
+            discount: "33%",
+            rating: 4.5,
+            image: "/IMG/CamisaBasica.JPG",
+            inWishlist: false
+        },
+        {
+            id: 2,
+            name: "Pantalón Vaquero",
+            category: "pantalones",
+            gender: "hombre",
+            price: 49.99,
+            originalPrice: 59.99,
+            discount: "17%",
+            rating: 4.2,
+            image: "/IMG/PantalonVaqueri.jpg",
+            inWishlist: true
+        },
+        {
+            id: 3,
+            name: "Vestido Floral",
+            category: "vestidos",
+            gender: "mujer",
+            price: 59.99,
+            originalPrice: 79.99,
+            discount: "25%",
+            rating: 4.8,
+            image: "/IMG/VestidoFloral.JPG",
+            inWishlist: false
+        },
+        {
+            id: 4,
+            name: "Zapatillas Deportivas",
+            category: "zapatos",
+            gender: "unisex",
+            price: 89.99,
+            originalPrice: 99.99,
+            discount: "10%",
+            rating: 4.7,
+            image: "/IMG/ZapatillasDeportivas.JPG",
+            inWishlist: false
+        },
+        
+        {
+            id: 5,
+            name: "Bolso de Cuero",
+            category: "accesorios",
+            gender: "mujer",
+            price: 129.99,
+            originalPrice: 149.99,
+            discount: "13%",
+            rating: 4.9,
+            image: "/IMG/Bolso.jpg",
+            inWishlist: false
+        },
+        {
+            id: 6,
+            name: "Camisa Formal",
+            category: "camisetas",
+            gender: "hombre",
+            price: 39.99,
+            originalPrice: 49.99,
+            discount: "20%",
+            rating: 4.3,
+            image: "/IMG/CamisaFloral.JPG",
+            inWishlist: false
+        },
+        {
+            id: 7,
+            name: "Falda Midi",
+            category: "vestidos",
+            gender: "mujer",
+            price: 34.99,
+            originalPrice: 44.99,
+            discount: "22%",
+            rating: 4.4,
+            image: "/IMG/FaldaMidi.JPG",
+            inWishlist: true
+        },
+        {
+            id: 8,
+            name: "Boina Francesa",
+            category: "accesorios",
+            gender: "unisex",
+            price: 149.99,
+            originalPrice: 199.99,
+            discount: "25%",
+            rating: 4.6,
+            image: "/IMG/BoinaFrancesa.JPG",
+            inWishlist: false
+        }
+        ,
+        {
+            id: 9,
+            name: "Blusa",
+            category: "camisetas",
+            gender: "mujer",
+            price: 149.99,
+            originalPrice: 199.99,
+            discount: "25%",
+            rating: 4.6,
+            image: "/IMG/Blusa.jpeg",
+            inWishlist: false
+        }
+    ];
+    
+    // Elementos DOM
+    const productContainer = document.getElementById('product-container');
+    const priceSlider = document.getElementById('price-slider');
+    const priceValue = document.getElementById('price-value');
+    const applyFiltersBtn = document.getElementById('apply-filters');
+    const clearFiltersBtn = document.getElementById('clear-filters');
+    const categoryCheckboxes = document.querySelectorAll('input[name="category"]');
+    const genderCheckboxes = document.querySelectorAll('input[name="gender"]');
+    const pagination = document.getElementById('pagination');
+    
+    // Mostrar valor del slider
+    priceSlider.addEventListener('input', function() {
+        priceValue.textContent = this.value + '€';
+    });
+    
+    // Generar HTML para cada producto
+    function createProductCard(product) {
+        return `
+            <div class="product-card" data-id="${product.id}" data-category="${product.category}" data-gender="${product.gender}" data-price="${product.price}">
+                <div class="product-image">
+                    <img src="${product.image}" alt="${product.name}">
+                    <div class="product-discount">${product.discount}</div>
+                    <div class="product-wishlist ${product.inWishlist ? 'active' : ''}" onclick="toggleWishlist(${product.id})">
+                        <i>♡</i>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">${product.category.charAt(0).toUpperCase() + product.category.slice(1)}</div>
+                    <h3 class="product-title">${product.name}</h3>
+                    <div class="product-price">
+                        <span class="current-price">${product.price.toFixed(2)}€</span>
+                        <span class="original-price">${product.originalPrice.toFixed(2)}€</span>
+                    </div>
+                    <div class="product-actions">
+                        <div class="product-rating">
+                            ${product.rating} ★
+                        </div>
+                        <button class="add-to-cart" onclick="addToCart(${product.id})">+</button>
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+    
+    // Cargar todos los productos
+    function loadProducts(filteredProducts = products) {
+        productContainer.innerHTML = '';
+        
+        if (filteredProducts.length === 0) {
+            productContainer.innerHTML = '<p>No se encontraron productos con los filtros seleccionados.</p>';
+            return;
+        }
+        
+        filteredProducts.forEach(product => {
+            productContainer.innerHTML += createProductCard(product);
+        });
+    }
+    
+    // Aplicar filtros
+    function applyFilters() {
+        // Obtener categorías seleccionadas
+        const selectedCategories = Array.from(categoryCheckboxes)
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.value);
+        
+        // Obtener géneros seleccionados
+        const selectedGenders = Array.from(genderCheckboxes)
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.value);
+        
+        // Obtener precio máximo
+        const maxPrice = parseFloat(priceSlider.value);
+        
+        // Filtrar productos
+        let filteredProducts = products;
+        
+        if (selectedCategories.length > 0) {
+            filteredProducts = filteredProducts.filter(product => 
+                selectedCategories.includes(product.category)
+            );
+        }
+        
+        if (selectedGenders.length > 0) {
+            filteredProducts = filteredProducts.filter(product => 
+                selectedGenders.includes(product.gender)
+            );
+        }
+        
+        filteredProducts = filteredProducts.filter(product => 
+            product.price <= maxPrice
+        );
+        
+        // Cargar productos filtrados
+        loadProducts(filteredProducts);
+    }
+    
+    // Limpiar filtros
+    function clearFilters() {
+        categoryCheckboxes.forEach(checkbox => checkbox.checked = false);
+        genderCheckboxes.forEach(checkbox => checkbox.checked = false);
+        priceSlider.value = 200;
+        priceValue.textContent = '200€';
+        loadProducts();
+    }
+    
+    // Toggle wishlist
+    window.toggleWishlist = function(productId) {
+        const product = products.find(p => p.id === productId);
+        if (product) {
+            product.inWishlist = !product.inWishlist;
+            const wishlistElement = document.querySelector(`.product-card[data-id="${productId}"] .product-wishlist`);
+            if (wishlistElement) {
+                wishlistElement.classList.toggle('active');
+            }
+        }
+    };
+    
+    // Añadir al carrito
+    window.addToCart = function(productId) {
+        const product = products.find(p => p.id === productId);
+        if (product) {
+            alert(`${product.name} añadido al carrito`);
+        }
+    };
+    
+    // Paginación
+    pagination.addEventListener('click', function(e) {
+        if (e.target.classList.contains('page-item')) {
+            const pageItems = document.querySelectorAll('.page-item');
+            pageItems.forEach(item => item.classList.remove('active'));
+            e.target.classList.add('active');
+            
+            // Aquí se implementaría la lógica real de paginación
+            // Para el ejemplo, simplemente recargamos los productos
+            loadProducts();
+            
+            // Scroll al inicio de los productos
+            productContainer.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+    
+    // Event listeners
+    applyFiltersBtn.addEventListener('click', applyFilters);
+    clearFiltersBtn.addEventListener('click', clearFilters);
+    
+    // Inicializar
+    loadProducts();
+</script>
+<footer>
+    <div class="footer-content">
+        <div class="footer-column contact-info">
+            <h3>Contacto</h3>
+            <p>Teléfono: 777-555-:777</p>
+            <p>Email: Chamo@vnzl.com</p>
+            <p>Dirección: Calle Principal 7532, Ciudad Caracas</p>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Horario</h3>
+            <p>Lunes a Viernes: 9:00 - 20:00</p>
+            <p>Sábados: 10:00 - 14:00</p>
+            <p>Domingos: Cerrado</p>
+            <p>Cerrado porque Nos quitaron el agua </p>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Síguenos</h3>
+            <p>Facebook</p>
+            <p>Instagram</p>
+            <p>Twitter</p>
+        </div>
+    </div>
+    
+    <div class="copyright">
+        <p>&copy; TODO es todo perro</p>
+    </div>
+</footer>
+</body>
+</html>
