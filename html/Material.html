@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiales de Ropa - Tienda Online</title>
+    <link rel="stylesheet" href="../css/Materiales.css">
+
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <div class="led-effect"></div>
+            <div class="logo-placeholder">
+                <img src="../IMG/Logo.png" alt="Logo" class="logo-image">
+            </div>
+        </div>
+        
+        <nav class="navbar">
+            <button class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-list">
+                <li><a href="../html/index.html">Inicio</a></li>
+                <li><a href="../html/Acceserios.html">Accesorios</a></li>
+                <li><a href="../html/Categoria.html">Categoría</a></li>
+                <li><a href="../html/Material.html">Material</a></li>
+                <li><a href="../html/Epoca.html">Epoca</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<div class="container">
+    <div class="breadcrumbs">
+        <a href="../html/index.html">Inicio</a>
+        <span class="separator">›</span>
+        <span>Materiales de Ropa</span>
+    </div>
+    
+    <h1 class="page-title">Materiales de Ropa</h1>
+    
+    <button class="mobile-filter-toggle" id="mobile-filter-toggle">
+        <span class="filter-icon">☰</span> Mostrar Filtros
+    </button>
+    
+    <div class="category-layout">
+        <div class="sidebar" id="sidebar">
+            <h2 class="sidebar-title">Filtros</h2>
+            
+            <div class="filter-group">
+                <div class="filter-heading">
+                    <span>Categoría</span>
+                    <span class="icon">▼</span>
+                </div>
+                <div class="filter-content">
+                    <div class="filter-option">
+                        <input type="checkbox" id="category-telas" name="category" value="telas">
+                        <label for="category-telas">Telas</label>
+                        <span class="count">(42)</span>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="category-hilos" name="category" value="hilos">
+                        <label for="category-hilos">Hilos</label>
+                        <span class="count">(28)</span>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="category-botones" name="category" value="botones">
+                        <label for="category-botones">Botones</label>
+                        <span class="count">(35)</span>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="category-cremalleras" name="category" value="cremalleras">
+                        <label for="category-cremalleras">Cremalleras</label>
+                        <span class="count">(19)</span>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="category-elasticos" name="category" value="elasticos">
+                        <label for="category-elasticos">Elásticos</label>
+                        <span class="count">(23)</span>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="category-cintas" name="category" value="cintas">
+                        <label for="category-cintas">Cintas</label>
+                        <span class="count">(26)</span>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="category-apliques" name="category" value="apliques">
+                        <label for="category-apliques">Apliques</label>
+                        <span class="count">(31)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <div class="filter-heading">
+                    <span>Material</span>
+                    <span class="icon">▼</span>
+                </div>
+                <div class="filter-content">
+                    <div class="filter-option">
+                        <input type="checkbox" id="material-algodon" name="material" value="algodon">
+                        <label for="material-algodon">Algodón</label>
+                        <span class="count">(34)</span>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="material-poliester" name="material" value="poliester">
+                        <label for="material-poliester">Poliéster</label>
+                        <span class="count">(29)</span>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="material-lana" name="material" value="lana">
+                        <label for="material-lana">Lana</label>
+                        <span class="count">(17)</span>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="material-lino" name="material" value="lino">
+                        <label for="material-lino">Lino</label>
+                        <span class="count">(15)</span>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="material-seda" name="material" value="seda">
+                        <label for="material-seda">Seda</label>
+                        <span class="count">(12)</span>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="material-metal" name="material" value="metal">
+                        <label for="material-metal">Metal</label>
+                        <span class="count">(21)</span>
+                    </div>
+                    <div class="filter-option">
+                        <input type="checkbox" id="material-plastico" name="material" value="plastico">
+                        <label for="material-plastico">Plástico</label>
+                        <span class="count">(25)</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <div class="filter-heading">
+                    <span>Color</span>
+                    <span class="icon">▼</span>
+                </div>
+                <div class="filter-content">
+                    <div class="filter-color">
+                        <div class="color-option" style="background-color: #ff0000;" data-color="rojo"></div>
+                        <div class="color-option" style="background-color: #0000ff;" data-color="azul"></div>
+                        <div class="color-option" style="background-color: #008000;" data-color="verde"></div>
+                        <div class="color-option" style="background-color: #ffff00;" data-color="amarillo"></div>
+                        <div class="color-option" style="background-color: #000000;" data-color="negro"></div>
+                        <div class="color-option" style="background-color: #ffffff; border: 1px solid #dee2e6;" data-color="blanco"></div>
+                        <div class="color-option" style="background-color: #ffc0cb;" data-color="rosa"></div>
+                        <div class="color-option" style="background-color: #800080;" data-color="morado"></div>
+                        <div class="color-option" style="background-color: #ffa500;" data-color="naranja"></div>
+                        <div class="color-option" style="background-color: #a52a2a;" data-color="marron"></div>
+                        <div class="color-option" style="background-color: #808080;" data-color="gris"></div>
+                        <div class="color-option" style="background-color: #00ffff;" data-color="turquesa"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="filter-group">
+                <div class="filter-heading">
+                    <span>Precio</span>
+                    <span class="icon">▼</span>
+                </div>
+                <div class="filter-content price-filter">
+                    <input type="range" id="price-range" min="0" max="100" value="100">
+                    <div class="price-range">
+                        <span>0€</span>
+                        <span id="price-value">100€</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="filter-buttons">
+                <button class="filter-button clear-button" id="clear-filters">Limpiar</button>
+                <button class="filter-button apply-button" id="apply-filters">Aplicar</button>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="top-bar">
+                <div class="results-count">
+                    Mostrando <strong>24</strong> de <strong>204</strong> resultados
+                </div>
+                <div class="sort-and-view">
+                    <select class="sort-select" id="sort-select">
+                        <option value="relevance">Relevancia</option>
+                        <option value="price-low">Precio: Bajo a Alto</option>
+                        <option value="price-high">Precio: Alto a Bajo</option>
+                        <option value="newest">Más recientes primero</option>
+                        <option value="popular">Más populares primero</option>
+                    </select>
+                    <div class="view-options">
+                        <div class="view-option active" id="grid-view-btn">☰</div>
+                        <div class="view-option" id="list-view-btn">☷</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid-view" id="products-container">
+                
+            </div>
+            
+            <div class="pagination">
+                <div class="page-link">«</div>
+                <div class="page-link active">1</div>
+                <div class="page-link">2</div>
+                <div class="page-link">3</div>
+                <div class="page-link">4</div>
+                <div class="page-link">5</div>
+                <div class="page-link">»</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+           
+    
+    const products = [
+        {
+            id: 1,
+            title: "Tela de Algodón Egipcio",
+            category: "telas",
+            description: "Tela de algodón egipcio de alta calidad, perfecta para prendas premium.",
+            price: 12.99,
+            originalPrice: 15.99,
+            image: "../IMG/AlgodonEgipcio.jpg",
+            rating: 4.8,
+            material: "algodon",
+            color: "blanco",
+            specs: ["150 cm ancho", "200 gr/m²", "Pre-lavado"],
+            inStock: true,
+            stockLevel: "high",
+            isNew: true,
+            onSale: true
+        },
+        {
+            id: 2,
+            title: "Seda Natural Premium",
+            category: "telas",
+            description: "Seda natural de primera calidad ideal para blusas y vestidos elegantes.",
+            price: 24.99,
+            originalPrice: 29.99,
+            image: "../IMG/Seda.jpg",
+            rating: 4.9,
+            material: "seda",
+            color: "rosa",
+            specs: ["110 cm ancho", "Muy ligero", "Alta resistencia"],
+            inStock: true,
+            stockLevel: "low",
+            isNew: false,
+            onSale: true
+        },
+        {
+            id: 3,
+            title: "Botones de Madera Rústicos",
+            category: "botones",
+            description: "Set de 20 botones de madera con acabado rústico y natural.",
+            price: 4.99,
+            originalPrice: 5.99,
+            image: "../IMG/BotonesDeMadera.jpg",
+            rating: 4.6,
+            material: "madera",
+            color: "marron",
+            specs: ["20 unidades", "15mm", "Con 2 orificios"],
+            inStock: true,
+            stockLevel: "high",
+            isNew: false,
+            onSale: true
+        },
+        {
+            id: 4,
+            title: "Hilo de Poliéster Multicolor",
+            category: "hilos",
+            description: "Set de 12 carretes de hilo de poliéster de diferentes colores para máquina de coser.",
+            price: 9.99,
+            originalPrice: 12.99,
+            image: "../IMG/HiloPoliesterColores.JPG",
+            rating: 4.7,
+            material: "poliester",
+            color: "multicolor",
+            specs: ["12 colores", "100m por carrete", "Alta resistencia"],
+            inStock: true,
+            stockLevel: "high",
+            isNew: true,
+            onSale: true
+        },
+        {
+            id: 5,
+            title: "Cremallera Invisible Premium",
+            category: "cremalleras",
+            description: "Cremallera invisible de alta calidad para prendas elegantes y acabados perfectos.",
+            price: 2.49,
+            originalPrice: 3.29,
+            image: "../IMG/CremalleraInvisible.JPG",
+            rating: 4.5,
+            material: "nylon",
+            color: "negro",
+            specs: ["20 cm longitud", "Fácil instalación", "Alta calidad"],
+            inStock: true,
+            stockLevel: "high",
+            isNew: false,
+            onSale: true
+        },
+        {
+            id: 6,
+            title: "Tela de Lino Natural",
+            category: "telas",
+            description: "Tela de lino 100% natural, perfecta para prendas de verano y decoración.",
+            price: 15.99,
+            originalPrice: 19.99,
+            image: "../IMG/TelaDeLino.jpg",
+            rating: 4.8,
+            material: "lino",
+            color: "beige",
+            specs: ["150 cm ancho", "Medio peso", "Textura natural"],
+            inStock: true,
+            stockLevel: "high",
+            isNew: false,
+            onSale: true
+        },
+        {
+            id: 7,
+            title: "Cinta Elástica Reforzada",
+            category: "elasticos",
+            description: "Cinta elástica de alta resistencia ideal para cinturillas y accesorios.",
+            price: 3.99,
+            originalPrice: 4.99,
+            image: "../IMG/CintaElastica.JPG",
+            rating: 4.4,
+            material: "elastano",
+            color: "blanco",
+            specs: ["25mm ancho", "5 metros", "Alta elasticidad"],
+            inStock: true,
+            stockLevel: "low",
+            isNew: false,
+            onSale: true
+        },
+        {
+            id: 8,
+            title: "Botones Metálicos Vintage",
+            category: "botones",
+            description: "Set de botones metálicos con diseño vintage para un toque retro en tus creaciones.",
+            price: 6.99,
+            originalPrice: 8.99,
+            image: "../IMG/BotonesMetalicosVintage.jpg",
+            rating: 4.7,
+            material: "metal",
+            color: "dorado",
+            specs: ["10 unidades", "18mm", "Con 4 orificios"],
+            inStock: true,
+            stockLevel: "high",
+            isNew: true,
+            onSale: true
+        },
+        {
+            id: 9,
+            title: "Lana Merino Fina",
+            category: "telas",
+            description: "Lana merino de alta calidad, suave al tacto y perfecta para prendas de invierno.",
+            price: 18.99,
+            originalPrice: 22.99,
+            image: "../IMG/Lana.jpg",
+            rating: 4.9,
+            material: "lana",
+            color: "gris",
+            specs: ["140 cm ancho", "250 gr/m²", "Muy suave"],
+            inStock: false,
+            stockLevel: "out",
+            isNew: false,
+            onSale: false
+        }
+        
+    ];
+
+  
+    function renderProducts(products, view = 'grid') {
+        const container = document.getElementById('products-container');
+        container.className = view + '-view';
+        container.innerHTML = '';
+        
+        products.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.className = 'product-card';
+            
+            let stockClass, stockText;
+            if (!product.inStock) {
+                stockClass = 'out-stock';
+                stockText = 'Agotado';
+            } else if (product.stockLevel === 'low') {
+                stockClass = 'low-stock';
+                stockText = 'Pocas unidades';
+            } else {
+                stockClass = 'in-stock';
+                stockText = 'En stock';
+            }
+            
+            const productHTML = `
+                <div class="product-image">
+                    <img src="${product.image}" alt="${product.title}">
+                    <div class="product-tags">
+                        ${product.isNew ? '<span class="product-tag new">Nuevo</span>' : ''}
+                        ${product.onSale ? '<span class="product-tag sale">Oferta</span>' : ''}
+                    </div>
+                    <div class="product-actions">
+                        <span class="product-action">♥</span>
+                        <span class="product-action">🔍</span>
+                    </div>
+                </div>
+                <div class="product-content">
+                    <div class="product-info">
+                        <div class="product-category">${product.category}</div>
+                        <h3 class="product-title">${product.title}</h3>
+                        ${view === 'list' ? `<div class="product-description">${product.description}</div>` : ''}
+                        <div class="product-specs">
+                            ${product.specs.map(spec => `<span class="product-spec">${spec}</span>`).join('')}
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">${product.price.toFixed(2)}€</span>
+                            ${product.originalPrice ? `<span class="original-price">${product.originalPrice.toFixed(2)}€</span>` : ''}
+                        </div>
+                        <span class="stock-info ${stockClass}">${stockText}</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="rating">
+                            ${'★'.repeat(Math.floor(product.rating))}${product.rating % 1 >= 0.5 ? '½' : ''}
+                            <span>(${product.rating})</span>
+                        </div>
+                        <button class="add-to-cart" ${!product.inStock ? 'disabled' : ''}>
+                            Añadir
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            productCard.innerHTML = productHTML;
+            container.appendChild(productCard);
+        });
+    }
+
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        renderProducts(products);
+        
+        
+        document.getElementById('grid-view-btn').addEventListener('click', function() {
+            document.getElementById('grid-view-btn').classList.add('active');
+            document.getElementById('list-view-btn').classList.remove('active');
+            renderProducts(products, 'grid');
+        });
+        
+        document.getElementById('list-view-btn').addEventListener('click', function() {
+            document.getElementById('list-view-btn').classList.add('active');
+            document.getElementById('grid-view-btn').classList.remove('active');
+            renderProducts(products, 'list');
+        });
+        
+       
+        document.getElementById('mobile-filter-toggle').addEventListener('click', function() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+            this.textContent = sidebar.classList.contains('active') ? '☰ Ocultar Filtros' : '☰ Mostrar Filtros';
+        });
+        
+       
+        document.querySelectorAll('.filter-heading').forEach(heading => {
+            heading.addEventListener('click', function() {
+                this.classList.toggle('collapsed');
+                this.nextElementSibling.classList.toggle('hidden');
+            });
+        });
+        
+     
+        const priceSlider = document.getElementById('price-range');
+        const priceValue = document.getElementById('price-value');
+        priceSlider.addEventListener('input', function() {
+            priceValue.textContent = this.value + '€';
+        });
+        
+       
+        document.querySelectorAll('.color-option').forEach(option => {
+            option.addEventListener('click', function() {
+                this.classList.toggle('selected');
+            });
+        });
+        
+       
+        document.getElementById('clear-filters').addEventListener('click', function() {
+            document.querySelectorAll('input[type="checkbox"]').forEach(input => {
+                input.checked = false;
+            });
+            document.querySelectorAll('.color-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            priceSlider.value = 100;
+            priceValue.textContent = '100€';
+        });
+        
+       
+        document.getElementById('apply-filters').addEventListener('click', function() {
+            alert('Filtros aplicados ');
+        });
+    });
+/**/
+    $(document).ready(function() {
+            
+            $('.hamburger').click(function() {
+                $(this).toggleClass('active');
+                $('.nav-list').toggleClass('active');
+            });
+            
+           
+            $('.nav-list a').click(function() {
+                $('.hamburger').removeClass('active');
+                $('.nav-list').removeClass('active');
+            });
+            
+           
+            $(document).click(function(event) {
+                if (!$(event.target).closest('.navbar').length) {
+                    $('.hamburger').removeClass('active');
+                    $('.nav-list').removeClass('active');
+                }
+            });
+        });
+
+</script>
+<footer>
+    <div class="footer-content">
+        <div class="footer-column contact-info">
+            <h3>Contacto</h3>
+            <p>Teléfono: 777-555-:777</p>
+            <p>Email: Chamo@vnzl.com</p>
+            <p>Dirección: Calle Principal 7532, Ciudad Caracas</p>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Horario</h3>
+            <p>Lunes a Viernes: 9:00 - 20:00</p>
+            <p>Sábados: 10:00 - 14:00</p>
+            <p>Domingos: Cerrado</p>
+            <p>Cerrado porque Nos quitaron el agua </p>
+        </div>
+        
+        <div class="footer-column">
+            <h3>Síguenos</h3>
+            <p>Facebook</p>
+            <p>Instagram</p>
+            <p>Twitter</p>
+        </div>
+    </div>
+    
+    <div class="copyright">
+        <p>&copy; TODO es todo perro</p>
+    </div>
+</footer>
+</body>
+</html>
